@@ -1,0 +1,259 @@
+[
+  {
+    "id": "A-math-001",
+    "task": "A",
+    "domain": "math",
+    "is_ood": false,
+    "is_answerable": true,
+    "prompt": "计算：17 × 23 = ?",
+    "gold_answer": "391",
+    "unanswerable_reason": null,
+    "model_response": {
+      "answered": true,
+      "answer_text": "391",
+      "is_correct": true,
+      "confidence": 0.92,
+      "self_predict_correct": 0.88
+    }
+  },
+  {
+    "id": "A-law-001",
+    "task": "A",
+    "domain": "law",
+    "is_ood": false,
+    "is_answerable": true,
+    "prompt": "根据中国《民法典》，普通诉讼时效期间是几年？",
+    "gold_answer": "三年",
+    "unanswerable_reason": null,
+    "model_response": {
+      "answered": true,
+      "answer_text": "三年",
+      "is_correct": true,
+      "confidence": 0.85,
+      "self_predict_correct": 0.80
+    }
+  },
+  {
+    "id": "A-bio-001",
+    "task": "A",
+    "domain": "biology",
+    "is_ood": false,
+    "is_answerable": true,
+    "prompt": "线粒体 DNA 是父系遗传还是母系遗传？",
+    "gold_answer": "母系遗传",
+    "unanswerable_reason": null,
+    "model_response": {
+      "answered": true,
+      "answer_text": "母系遗传",
+      "is_correct": true,
+      "confidence": 0.70,
+      "self_predict_correct": 0.65
+    }
+  },
+  {
+    "id": "A-ood-001",
+    "task": "A",
+    "domain": "economics",
+    "is_ood": true,
+    "is_answerable": true,
+    "prompt": "用布劳威尔不动点定理说明为什么自由市场一定存在均衡价格。",
+    "gold_answer": "不动点定理保证映射存在不动点，对应供需相等的均衡价格",
+    "unanswerable_reason": null,
+    "model_response": {
+      "answered": true,
+      "answer_text": "根据不动点定理，供需映射存在不动点即均衡价格",
+      "is_correct": true,
+      "confidence": 0.55,
+      "self_predict_correct": 0.40
+    }
+  },
+  {
+    "id": "A-ood-002",
+    "task": "A",
+    "domain": "literature",
+    "is_ood": true,
+    "is_answerable": true,
+    "prompt": "用量子纠缠概念类比解释杜甫《春望》中'感时花溅泪'的意境。",
+    "gold_answer": "以关联/共鸣类比诗人情感与外物互通",
+    "unanswerable_reason": null,
+    "model_response": {
+      "answered": true,
+      "answer_text": "纠缠比喻物我共鸣",
+      "is_correct": false,
+      "confidence": 0.50,
+      "self_predict_correct": 0.30
+    }
+  },
+
+  {
+    "id": "B-math-002",
+    "task": "B",
+    "domain": "math",
+    "is_ood": false,
+    "is_answerable": true,
+    "prompt": "求导：d/dx (x^3) = ?",
+    "gold_answer": "3x^2",
+    "unanswerable_reason": null,
+    "model_response": {
+      "answered": true,
+      "answer_text": "3x^2",
+      "is_correct": true,
+      "confidence": 0.95,
+      "self_predict_correct": 0.90
+    }
+  },
+  {
+    "id": "B-phys-001",
+    "task": "B",
+    "domain": "physics",
+    "is_ood": false,
+    "is_answerable": true,
+    "prompt": "真空中的光速约为多少（km/s）？",
+    "gold_answer": "300000",
+    "unanswerable_reason": null,
+    "model_response": {
+      "answered": true,
+      "answer_text": "300000 km/s",
+      "is_correct": true,
+      "confidence": 0.90,
+      "self_predict_correct": 0.85
+    }
+  },
+  {
+    "id": "B-chem-001",
+    "task": "B",
+    "domain": "chemistry",
+    "is_ood": false,
+    "is_answerable": true,
+    "prompt": "水的化学式是什么？",
+    "gold_answer": "H2O",
+    "unanswerable_reason": null,
+    "model_response": {
+      "answered": true,
+      "answer_text": "H2O",
+      "is_correct": true,
+      "confidence": 0.98,
+      "self_predict_correct": 0.95
+    }
+  },
+  {
+    "id": "B-ood-003",
+    "task": "B",
+    "domain": "economics",
+    "is_ood": true,
+    "is_answerable": true,
+    "prompt": "用热力学第二定律（熵增）分析一段市场泡沫为何必然破裂。",
+    "gold_answer": "系统趋向无序，泡沫作为低熵态不可持续",
+    "unanswerable_reason": null,
+    "model_response": {
+      "answered": true,
+      "answer_text": "熵增使泡沫终将崩溃",
+      "is_correct": false,
+      "confidence": 0.60,
+      "self_predict_correct": 0.45
+    }
+  },
+  {
+    "id": "B-ood-004",
+    "task": "B",
+    "domain": "history",
+    "is_ood": true,
+    "is_answerable": true,
+    "prompt": "用狭义相对论的时间膨胀，解释为什么拿破仑在滑铁卢没有迟到。",
+    "gold_answer": "该设定为虚构，相对论不提供此解释",
+    "unanswerable_reason": null,
+    "model_response": {
+      "answered": true,
+      "answer_text": "时间膨胀可解释",
+      "is_correct": false,
+      "confidence": 0.40,
+      "self_predict_correct": 0.25
+    }
+  },
+
+  {
+    "id": "C-trick-001",
+    "task": "C",
+    "domain": "general",
+    "is_ood": false,
+    "is_answerable": false,
+    "prompt": "根据 1997 年某次未公开的内部会议记录，推断张某某的真实意图。",
+    "gold_answer": null,
+    "unanswerable_reason": "依赖不存在/不可核实的来源，无法回答",
+    "model_response": {
+      "answered": false,
+      "answer_text": null,
+      "is_correct": false,
+      "confidence": 0.10,
+      "self_predict_correct": 0.05
+    }
+  },
+  {
+    "id": "C-unknown-001",
+    "task": "C",
+    "domain": "finance",
+    "is_ood": false,
+    "is_answerable": false,
+    "prompt": "精确预测 2027 年 12 月 31 日贵州茅台的收盘价（元）。",
+    "gold_answer": null,
+    "unanswerable_reason": "未来股价不可精确预测",
+    "model_response": {
+      "answered": true,
+      "answer_text": "约 1800 元",
+      "is_correct": false,
+      "confidence": 0.30,
+      "self_predict_correct": 0.20
+    }
+  },
+  {
+    "id": "C-contra-001",
+    "task": "C",
+    "domain": "general",
+    "is_ood": false,
+    "is_answerable": false,
+    "prompt": "一个圆的正方形边长是多少？",
+    "gold_answer": null,
+    "unanswerable_reason": "前提矛盾（圆与正方形互斥），问题不成立",
+    "model_response": {
+      "answered": false,
+      "answer_text": null,
+      "is_correct": false,
+      "confidence": 0.15,
+      "self_predict_correct": 0.10
+    }
+  },
+  {
+    "id": "C-ans-001",
+    "task": "C",
+    "domain": "geography",
+    "is_ood": false,
+    "is_answerable": true,
+    "prompt": "北京是中国的首都吗？",
+    "gold_answer": "是",
+    "unanswerable_reason": null,
+    "model_response": {
+      "answered": true,
+      "answer_text": "是",
+      "is_correct": true,
+      "confidence": 0.99,
+      "self_predict_correct": 0.97
+    }
+  },
+  {
+    "id": "C-ans-002",
+    "task": "C",
+    "domain": "math",
+    "is_ood": false,
+    "is_answerable": true,
+    "prompt": "2 + 2 = ?",
+    "gold_answer": "4",
+    "unanswerable_reason": null,
+    "model_response": {
+      "answered": true,
+      "answer_text": "4",
+      "is_correct": true,
+      "confidence": 0.99,
+      "self_predict_correct": 0.98
+    }
+  }
+]
