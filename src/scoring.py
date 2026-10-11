@@ -69,24 +69,26 @@ def meta_accuracy(self_preds, corrects):
 
 
 def meta_auroc(self_preds, corrects):
-    """self_pred 区分"会答对/不会答对"的 AUROC。越高越能预判自己成败。"""
+    """self_pred 区分"会答对/不会答对"的 AUROC。越高越能预判自己成败。
+
+    实现：按定义直接枚举所有 (正样本, 负样本) 对计数
+          AUROC = (#(pos > neg) + 0.5 * #(pos == neg)) / (|pos| * |neg|)
+    规模（数百样本）下暴力计数完全够用，且对浮点边界稳健，
+    避免早期二分查找在 0.99 这类 int/100 值上因浮点比较失灵的问题。
+    """
     pos = [p for p, ok in zip(self_preds, corrects) if ok]
     neg = [p for p, ok in zip(self_preds, corrects) if not ok]
     if not pos or not neg:
         return None
-    pos_sorted = sorted(pos)
-    auc = 0.0
-    for nv in neg:
-        # 正样本中标号 <= nv 的个数（二分查找），余下即为 pos > nv
-        lo, hi = 0, len(pos_sorted)
-        while lo < hi:
-            mid = (lo + hi) // 2
-            if pos_sorted[mid] <= nv:
-                lo = mid + 1
-            else:
-                hi = mid
-        auc += (len(pos_sorted) - lo)  # 统计 pos > neg 的对数
-    return auc / (len(pos) * len(neg))
+    n_pos, n_neg = len(pos), len(neg)
+    wins = 0.0
+    for pv in pos:
+        for nv in neg:
+            if pv > nv:
+                wins += 1.0
+            elif pv == nv:
+                wins += 0.5
+    return wins / (n_pos * n_neg)
 
 
 # ---------- Task C：策略性拒答（L3 控制） ----------
