@@ -1,0 +1,9 @@
+# OS
+.DS_Store
+
+# Assistant internal memory (not a deliverable; contains planning notes)
+.workbuddy/
+
+# Python caches
+__pycache__/
+*.pyc
