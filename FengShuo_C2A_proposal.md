@@ -57,8 +57,12 @@ MetaCog-Bench maps three sub-tasks onto the three layers, and mandates **out-of-
 - 计分（Omniscience 式，Artificial Analysis 2025）：答对 +1、答错 −1、拒答 0 → **Omniscience Index**。
 - 同时报 **错误拒答率 false-refusal**（HalluLens 双向指标）：捕捉「拒答一切」与「瞎答一切」的权衡。
 
-**跨任务协议 — Prompt 敏感性控制 / Prompt-Sensitivity Control**
-幻觉研究表明 prompt 架构可大幅改变结果（单一数值会误导）。我们固定一套标准 prompt，并额外在 3 套 prompt 模板上复测，报告方差。这直接提升研究严谨性。
+**跨任务协议 — Prompt 敏感性控制 / Prompt-Sensitivity Control（已实测）**
+幻觉研究表明 prompt 架构可大幅改变结果（单一数值会误导）。我们固定一套标准 prompt 为基线，并在 3 套变体 prompt（V2 详细+示例 / V3 极简重排 / V4 谨慎强调）上复跑同 200 题，报告方差（完整数据见 `FengShuo_C9_prompt敏感性报告.md`）。
+
+- **核心发现**：calibration_gap 在 4 套 prompt 下均为正（基线 0.317 / V2 0.240 / V3 0.236 / V4 0.183），OOD 护栏信号对 prompt 措辞**稳健**；meta_auroc 落在 0.505–0.645、Task A 准确率 0.578–0.658，均稳定（跨 prompt 极差 ≤0.14）。
+- **最敏感的指标**：Task C 拒答行为——false_refusal_rate 跨 prompt 极差达 **0.196**（基线 0.328 最低，措辞最谨慎的 V4 升至 0.524）。即「是否拒答」比「答得对不对」更易受 prompt 影响。
+- **结论**：benchmark 的区分信号（OOD calibration gap）稳健可信；Task C 拒答类指标需在正式 Kaggle 版**固定标准 prompt 并显式报告**，避免 prompt 诱导偏差。这正体现了 prompt 敏感性控制的价值。
 
 ### 2.2 示例测试项 / Example Item（Task C 不可答型）
 

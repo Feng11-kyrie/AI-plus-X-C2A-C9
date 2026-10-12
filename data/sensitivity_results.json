@@ -1,0 +1,142 @@
+{
+  "model": "deepseek-flash",
+  "effort": "high",
+  "baseline_cost_cny": 0.3922,
+  "variants": {
+    "V2_detailed_example": {
+      "n": 200,
+      "cost": 0.456,
+      "report": {
+        "n_total": 200,
+        "n_id": 161,
+        "n_ood": 39,
+        "TaskA_meta_accuracy": 0.6149068322981367,
+        "TaskA_meta_auroc": 0.5956337569240795,
+        "TaskB_ECE_ID": 0.3303105590062112,
+        "TaskB_ECE_OOD": 0.5700000000000001,
+        "TaskB_calibration_gap": 0.23968944099378886,
+        "TaskB_brier_ID": 0.31896645962732917,
+        "TaskC": {
+          "coverage": 0.585,
+          "acc_answered": 0.8461538461538461,
+          "good_abstain_rate": 0.4819277108433735,
+          "false_refusal_rate": 0.5180722891566265,
+          "omniscience_index": 0.23596385542168669
+        },
+        "selective_auroc": 0.5956337569240795
+      }
+    },
+    "V3_terse_reorder": {
+      "n": 200,
+      "cost": 0.4017,
+      "report": {
+        "n_total": 200,
+        "n_id": 161,
+        "n_ood": 39,
+        "TaskA_meta_accuracy": 0.5962732919254659,
+        "TaskA_meta_auroc": 0.645442997777072,
+        "TaskB_ECE_ID": 0.34708074534161487,
+        "TaskB_ECE_OOD": 0.5833333333333333,
+        "TaskB_calibration_gap": 0.2362525879917184,
+        "TaskB_brier_ID": 0.32729565217391304,
+        "TaskC": {
+          "coverage": 0.585,
+          "acc_answered": 0.8034188034188035,
+          "good_abstain_rate": 0.4939759036144578,
+          "false_refusal_rate": 0.5060240963855421,
+          "omniscience_index": 0.2169879518072289
+        },
+        "selective_auroc": 0.6204350587488091
+      }
+    },
+    "V4_caution_emphasis": {
+      "n": 200,
+      "cost": 1.287,
+      "report": {
+        "n_total": 200,
+        "n_id": 161,
+        "n_ood": 39,
+        "TaskA_meta_accuracy": 0.577639751552795,
+        "TaskA_meta_auroc": 0.627134724857685,
+        "TaskB_ECE_ID": 0.3526708074534161,
+        "TaskB_ECE_OOD": 0.5358974358974359,
+        "TaskB_calibration_gap": 0.18322662844401977,
+        "TaskB_brier_ID": 0.3268223602484472,
+        "TaskC": {
+          "coverage": 0.58,
+          "acc_answered": 0.8017241379310345,
+          "good_abstain_rate": 0.47619047619047616,
+          "false_refusal_rate": 0.5238095238095238,
+          "omniscience_index": 0.20309523809523805
+        },
+        "selective_auroc": 0.6338551549652119
+      }
+    }
+  },
+  "variance": {
+    "scalar": {
+      "TaskA_meta_accuracy": {
+        "min": 0.577639751552795,
+        "max": 0.6583850931677019,
+        "range": 0.08074534161490687
+      },
+      "TaskA_meta_auroc": {
+        "min": 0.5049742710120069,
+        "max": 0.645442997777072,
+        "range": 0.14046872676506517
+      },
+      "TaskB_ECE_ID": {
+        "min": 0.3103105590062113,
+        "max": 0.3526708074534161,
+        "range": 0.04236024844720482
+      },
+      "TaskB_ECE_OOD": {
+        "min": 0.5358974358974359,
+        "max": 0.6271794871794871,
+        "range": 0.09128205128205125
+      },
+      "TaskB_calibration_gap": {
+        "min": 0.18322662844401977,
+        "max": 0.31686892817327583,
+        "range": 0.13364229972925606
+      },
+      "TaskB_brier_ID": {
+        "min": 0.31304596273291924,
+        "max": 0.32729565217391304,
+        "range": 0.014249689440993807
+      },
+      "selective_auroc": {
+        "min": 0.494253859348199,
+        "max": 0.6338551549652119,
+        "range": 0.13960129561701295
+      }
+    },
+    "TaskC": {
+      "coverage": {
+        "min": 0.58,
+        "max": 0.695,
+        "range": 0.11499999999999999
+      },
+      "acc_answered": {
+        "min": 0.7697841726618705,
+        "max": 0.8461538461538461,
+        "range": 0.07636967349197565
+      },
+      "good_abstain_rate": {
+        "min": 0.47619047619047616,
+        "max": 0.6721311475409836,
+        "range": 0.1959406713505074
+      },
+      "false_refusal_rate": {
+        "min": 0.32786885245901637,
+        "max": 0.5238095238095238,
+        "range": 0.19594067135050747
+      },
+      "omniscience_index": {
+        "min": 0.20309523809523805,
+        "max": 0.37106557377049176,
+        "range": 0.1679703356752537
+      }
+    }
+  }
+}

@@ -82,10 +82,14 @@ def estimate_cost(usage):
 
 
 def parse_output(text):
-    """从模型输出里抽 ANSWER/CONFIDENCE/SELF_PRED/CAN_ANSWER/REASON。"""
+    """从模型输出里抽 ANSWER/CONFIDENCE/SELF_PRED/CAN_ANSWER/REASON。
+
+    用行首锚定 + re.M：避免 "ANSWER:" 错误匹配到 "CAN_ANSWER:" 内部的
+    "ANSWER" 子串（曾导致 answer_text 抓成 "YES"、判分全错）。
+    """
     def grab(field):
         import re
-        m = re.search(rf"{field}:\s*(.+)", text)
+        m = re.search(rf"^{field}:\s*(.+)", text, re.M)
         return m.group(1).strip() if m else None
     answer = grab("ANSWER")
     conf = grab("CONFIDENCE")
