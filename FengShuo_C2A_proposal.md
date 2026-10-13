@@ -135,7 +135,7 @@ The core innovation: the first unified LLM metacognition benchmark that maps ont
 | 题库 | 复用 SelfAware/AbstentionBench 公开题型 + 程序生成 OOD 题 | ✅ 已完成（200 题 pilot） |
 | 评分函数 | ECE/Brier/AUROC/Omniscience（纯统计，Python） | ✅ 已完成（src/scoring.py，已修 1 处 AUROC bug） |
 | 模型测试 | DeepSeek V4.1 Flash 200 题（用户批准 ¥3 上限，实测 ¥0.392） | ✅ 已完成 |
-| 文档 + 提交 | Kaggle Community Benchmark 格式 + README | ⏳ 待 C9 阶段 |
+| 文档 + 提交 | Kaggle Community Benchmark 格式 + README | ✅ 已完成（`kaggle/benchmark/`：公开题集+隐藏金标准+竞赛评分脚本+入门基线笔记+README） |
 | 缓冲 | 调试迭代 | 已含 |
 
 All components are text-based, requiring no GPU training — only API inference. The OOD split and programmatic generation eliminate data-contamination concerns. **可行性已从「声称」升级为「已验证」**：pilot 实际花费 ¥0.392、耗时 <1 天，远低于原估 9 天。
